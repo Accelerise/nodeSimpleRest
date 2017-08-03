@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accelerise logo动画</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<style type="text/css">
+	.logo-box{
+		position: absolute;
+		left: 40%;
+		top: 40%;
+		width: 128px;
+		height: 128px;
+	}
+	.logo-box>div{
+		position: absolute;
+		background-size: cover;
+		width: 128px;
+		height: 128px;
+		animation: nop 5s ease-in-out infinite;
+	}
+	#logo-row{
+		background-image: url(./logo-anime/logo-row.png);
+		animation-name: row-animate;
+	}
+	#logo-col{
+		background-image: url(./logo-anime/logo-col.png);
+		animation-name: col-animate;
+	}
+	#logo-text{
+		background-image: url(./logo-anime/logo-text.png);
+	}
+	@keyframes row-animate {
+	    0% { 
+	    	left: 80px;
+	    	opacity: 0;
+	    	-webkit-filter: blur(15px);
+	    }
+	    16%{
+	    	left: -5px;
+	    }
+	    17% {  
+	    	left: 0;
+	    	opacity: 1;
+	    	-webkit-filter: blur(0);
+	    }
+	    90% { 
+	    	opacity: 1; 
+	    	-webkit-filter: blur(0);
+	    }
+	    100% { 
+	    	opacity: 0; 
+	    	-webkit-filter: blur(25px);
+	    }
+	}
+	@keyframes col-animate {
+		0%{
+	    	left: 30px;
+	    	bottom: 20px;
+	    	opacity: 0;
+	    	-webkit-filter: blur(25px);
+	    	transform: scale(1.5);
+	    }
+	    8%{
+	    	left: 30px;
+	    	bottom: 20px;
+	    	opacity: 0;
+	    	-webkit-filter: blur(25px);
+	    	transform: scale(1.5);
+	    }
+	    17%{
+	    	left: -5px;
+	    	bottom: -2px;
+	    }
+	    18% {  
+	    	left: 0;
+	    	bottom: 0;
+	    	opacity: 1;
+	    	-webkit-filter: blur(0);
+	    	transform: scale(1);
+	    }
+	    90% { 
+	    	opacity: 1; 
+	    	-webkit-filter: blur(0);
+	    }
+	    100%{
+	    	opacity: 0;
+	    	-webkit-filter: blur(25px);
+	    }
+	}
+</style>
+<body>
+<script type="text/javascript">
+	$.ajax("/kjg");
+</script>
+<div class="logo-box">
+	<div id="logo-row"></div>
+	<div id="logo-col"></div>
+	<div id="logo-text"></div>
+</div>
+</body>
+</html>
